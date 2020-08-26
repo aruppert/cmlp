@@ -17,8 +17,8 @@ import {
   TwitterIcon,
   WhatsappIcon,
 } from "react-share";
-import patreonLogo from "../graphics/patreon-logo.png";
 import patreonText from "../graphics/patreon-text.png";
+import bandcampLogo from "../graphics/bandcamp-logo.png";
 
 const Container = styled.div`
   height: 100%;
@@ -30,12 +30,15 @@ const Container = styled.div`
   align-items: center;
 `;
 
-// const Title = styled.h1`
-//   color: ${(props) => props.theme.colors.pri};
-// `;
+const Title = styled.h1`
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: ${(props) => props.theme.colors.pri};
+`;
 
 const Artwork = styled.img`
-  background-image: url(${artwork_cmlp_remix});
+  border: none;
   background-size: cover;
   width: 300px;
   height: 300px;
@@ -93,8 +96,15 @@ const ButtonsWrapper = styled.div`
   justify-content: space-evenly;
 `;
 
+const FundingWrapper = styled("div")`
+  display: flex;
+  width: 100%;
+`;
 const PatreonWrapper = styled("div")`
-  border: 3px solid #fe424e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #fe424e;
   border-radius: 5px;
   box-shadow: 0px 0px 15px -6px rgba(0, 0, 0, 0.83);
   padding: 0.3rem 0.5rem 0.2rem;
@@ -102,13 +112,24 @@ const PatreonWrapper = styled("div")`
 `;
 
 const Patreon = styled("img")`
-  height: 2rem;
+  height: 1.5rem;
+`;
+
+const BandcampWrapper = styled(PatreonWrapper)`
+  border: 4px solid rgb(71, 121, 134);
+  background: rgb(240, 240, 240, 0.9);
+  padding: 0;
+`;
+
+const Bandcamp = styled("img")`
+  height: 2.5rem;
 `;
 export default function Start() {
   const shareURL = "https://www.choirsband.com/";
   return (
     <Container>
-      <Artwork />
+      <Title>coming soon ...</Title>
+      <Artwork src={artwork_cmlp_remix} alt="Artwork of the remix" />
       <ReactAudioPlayerStyled src={teaser} controls>
         Your browser does not support the
         <code>audio</code> element.
@@ -117,25 +138,33 @@ export default function Start() {
         Contact the <a href="mailto:cmlp@posteo.de">artists</a> for any
         inquiries or support them on{" "}
       </Contact>
-      <PatreonWrapper>
-        <a
-          href="https://www.patreon.com/bePatron?u=41221468"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Patreon src={patreonLogo} alt="Patreon Logo" />
-          <Patreon src={patreonText} alt="Patreon Text" />
-        </a>
-      </PatreonWrapper>
+      <FundingWrapper>
+        <PatreonWrapper>
+          <a
+            href="https://www.patreon.com/bePatron?u=41221468"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {/* <Patreon src={patreonLogo} alt="Patreon Logo" /> */}
+            <Patreon src={patreonText} alt="Patreon Text" />
+          </a>
+        </PatreonWrapper>
+        <BandcampWrapper>
+          <a href="https://cmlp.bandcamp.com/" target="_blank" rel="noreferrer">
+            <Bandcamp src={bandcampLogo} />
+          </a>
+        </BandcampWrapper>
+      </FundingWrapper>
+
       <Credit>
         Original Song by{" "}
         <a target="_blank" rel="noreferrer" href="https://www.choirsband.com/">
           Choirs
         </a>{" "}
-        - Watch the official clip{" "}
+        {/* also{" "}
         <a target="_blank" rel="noreferrer" href="https://youtu.be/0T9C-MYew1M">
-          here on YouTube
-        </a>
+          watch on YouTube
+        </a> */}
       </Credit>
       <ShareButtonsContainer>
         <ShareText>Share this site:</ShareText>
