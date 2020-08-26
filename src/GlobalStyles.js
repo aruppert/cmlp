@@ -13,8 +13,9 @@ function GlobalStyles() {
         body {
           height: 100%;
           font-size: 18px;
+          font-family: "Montserrat", sans-serif;
           margin: 0;
-          color: ${theme.colors.sec};
+          color: ${theme.colors.pri};
         }
         html {
           height: 100%;
