@@ -14,11 +14,7 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  filter: blur(30px);
-  -webkit-filter: blur(30px);
-  -moz-filter: blur(30px);
-  -o-filter: blur(30px);
-  -ms-filter: blur(30px);
+  filter: blur(25px);
 `;
 
 export default function Background() {
