@@ -30,6 +30,15 @@ const ReactAudioPlayerStyled = styled(ReactAudioPlayer)`
   width: 300px;
 `;
 
+const Contact = styled.aside`
+  font-size: 1.5rem;
+  text-align: center;
+  color: ${(props) => props.theme.colors.pri};
+  & > a {
+    color: ${(props) => props.theme.colors.sec};
+  }
+`;
+
 export default function Start() {
   const [showConfirmation, setShowConfirmation] = React.useState(false);
   return (
@@ -49,6 +58,10 @@ export default function Start() {
       ) : (
         <Title>Pausing</Title>
       )}
+      <Contact>
+        Contact the <a href="mailto:cmlp@posteo.de">artists</a> for remix and
+        booking inquiries!{" "}
+      </Contact>
     </Container>
   );
 }
