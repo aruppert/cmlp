@@ -17,6 +17,8 @@ import {
   TwitterIcon,
   WhatsappIcon,
 } from "react-share";
+import patreonLogo from "../graphics/patreon-logo.png";
+import patreonText from "../graphics/patreon-text.png";
 
 const Container = styled.div`
   height: 100%;
@@ -28,9 +30,9 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Title = styled.h1`
-  color: ${(props) => props.theme.colors.pri};
-`;
+// const Title = styled.h1`
+//   color: ${(props) => props.theme.colors.pri};
+// `;
 
 const Artwork = styled.img`
   background-image: url(${artwork_cmlp_remix});
@@ -45,19 +47,26 @@ const ReactAudioPlayerStyled = styled(ReactAudioPlayer)`
 `;
 
 const Contact = styled.p`
-  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1.4rem;
   text-align: center;
+  margin: 0;
   color: ${(props) => props.theme.colors.pri};
   & > a {
     color: ${(props) => props.theme.colors.sec};
+    font-weight: 400;
   }
 `;
 const Credit = styled.aside`
   font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 150;
   text-align: center;
   color: ${(props) => props.theme.colors.pri};
   & > a {
     color: ${(props) => props.theme.colors.sec};
+    font-weight: 400;
   }
 `;
 
@@ -73,6 +82,8 @@ const ShareButtonsContainer = styled.div`
 
 const ShareText = styled.aside`
   font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 150;
   color: ${(props) => props.theme.colors.pri};
 `;
 
@@ -81,30 +92,41 @@ const ButtonsWrapper = styled.div`
   width: 100%;
   justify-content: space-evenly;
 `;
+
+const PatreonWrapper = styled("div")`
+  border: 3px solid #fe424e;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px -6px rgba(0, 0, 0, 0.83);
+  padding: 0.3rem 0.5rem 0.2rem;
+  margin: 0.5rem;
+`;
+
+const Patreon = styled("img")`
+  height: 2rem;
+`;
 export default function Start() {
-  const [showConfirmation, setShowConfirmation] = React.useState(false);
   const shareURL = "https://www.choirsband.com/";
   return (
     <Container>
       <Artwork />
-      <ReactAudioPlayerStyled
-        src={teaser}
-        controls
-        onPlay={() => setShowConfirmation(true)}
-        onPause={() => setShowConfirmation(false)}
-      >
+      <ReactAudioPlayerStyled src={teaser} controls>
         Your browser does not support the
         <code>audio</code> element.
       </ReactAudioPlayerStyled>
-      {showConfirmation ? (
-        <Title>Playing *strobo effect*</Title>
-      ) : (
-        <Title>Pausing</Title>
-      )}
       <Contact>
-        Contact the <a href="mailto:cmlp@posteo.de">artists</a> for remix and
-        booking inquiries!{" "}
+        Contact the <a href="mailto:cmlp@posteo.de">artists</a> for any
+        inquiries or support them on{" "}
       </Contact>
+      <PatreonWrapper>
+        <a
+          href="https://www.patreon.com/bePatron?u=41221468"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Patreon src={patreonLogo} alt="Patreon Logo" />
+          <Patreon src={patreonText} alt="Patreon Text" />
+        </a>
+      </PatreonWrapper>
       <Credit>
         Original Song by{" "}
         <a target="_blank" rel="noreferrer" href="https://www.choirsband.com/">
