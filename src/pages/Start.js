@@ -19,6 +19,8 @@ import {
 } from "react-share";
 import patreonText from "../graphics/patreon-text.png";
 import bandcampLogo from "../graphics/bandcamp-logo.png";
+import ContactIcons from "../components/ContactIcons";
+import StreamingIcons from "../components/StreamingIcons";
 
 const Container = styled.div`
   height: 100%;
@@ -30,31 +32,30 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Title = styled.h1`
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 1.4rem;
-  color: ${(props) => props.theme.colors.pri};
-`;
+// const Title = styled.h1`
+//   text-transform: uppercase;
+//   font-weight: 400;
+//   font-size: 1.4rem;
+//   color: ${(props) => props.theme.colors.pri};
+// `;
 
 const Artwork = styled.img`
   border: none;
   background-size: cover;
-  width: 300px;
-  height: 300px;
+  width: 100%;
 `;
 
 const ReactAudioPlayerStyled = styled(ReactAudioPlayer)`
   margin: 1rem;
-  width: 300px;
+  width: 325px;
 `;
 
-const Contact = styled.p`
+const Text = styled.p`
   text-transform: uppercase;
   font-weight: 200;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: center;
-  margin: 0;
+  margin: 0.4rem 0 0;
   color: ${(props) => props.theme.colors.pri};
   & > a {
     color: ${(props) => props.theme.colors.sec};
@@ -66,6 +67,7 @@ const Credit = styled.aside`
   text-transform: uppercase;
   font-weight: 150;
   text-align: center;
+  margin: 0.4rem;
   color: ${(props) => props.theme.colors.pri};
   & > a {
     color: ${(props) => props.theme.colors.sec};
@@ -87,6 +89,7 @@ const ShareText = styled.aside`
   font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 150;
+  margin: 0.2rem;
   color: ${(props) => props.theme.colors.pri};
 `;
 
@@ -99,7 +102,9 @@ const ButtonsWrapper = styled.div`
 const FundingWrapper = styled("div")`
   display: flex;
   width: 100%;
+  margin: 0.5rem;
 `;
+
 const PatreonWrapper = styled("div")`
   display: flex;
   align-items: center;
@@ -128,16 +133,16 @@ export default function Start() {
   const shareURL = "https://www.choirsband.com/";
   return (
     <Container>
-      <Title>coming soon ...</Title>
       <Artwork src={artwork_cmlp_remix} alt="Artwork of the remix" />
       <ReactAudioPlayerStyled src={teaser} controls>
         Your browser does not support the
         <code>audio</code> element.
       </ReactAudioPlayerStyled>
-      <Contact>
-        Contact the <a href="mailto:cmlp@posteo.de">artists</a> for any
-        inquiries or support them on{" "}
-      </Contact>
+      <Text>.stream us</Text>
+      <StreamingIcons />
+      <Text>.get in touch</Text>
+      <ContactIcons />
+      <Text>.support us</Text>
       <FundingWrapper>
         <PatreonWrapper>
           <a
@@ -155,19 +160,14 @@ export default function Start() {
           </a>
         </BandcampWrapper>
       </FundingWrapper>
-
       <Credit>
-        Original Song by{" "}
+        .Original Song by{" "}
         <a target="_blank" rel="noreferrer" href="https://www.choirsband.com/">
           Choirs
-        </a>{" "}
-        {/* also{" "}
-        <a target="_blank" rel="noreferrer" href="https://youtu.be/0T9C-MYew1M">
-          watch on YouTube
-        </a> */}
+        </a>
       </Credit>
       <ShareButtonsContainer>
-        <ShareText>Share this site:</ShareText>
+        <ShareText>.Share this site</ShareText>
         <ButtonsWrapper>
           <EmailShareButton url={shareURL}>
             <EmailIcon size={32} round />
