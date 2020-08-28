@@ -17,9 +17,6 @@ function GlobalStyles() {
           margin: 0;
           color: ${theme.colors.pri};
         }
-        html {
-          height: 100%;
-        }
         #root {
           height: 100%;
         }
