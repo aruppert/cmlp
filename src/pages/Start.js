@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import artwork_cmlp_remix from "../graphics/artwork_cmlp_remix.jpg";
+import cover_west_end_rosa from "../graphics/cover_west_end_rosa.jpg";
 import ReactAudioPlayer from "react-audio-player";
 import teaser from "../audio/teaser.mp3";
 import {
@@ -32,13 +32,6 @@ const Container = styled.div`
   align-items: center;
 `;
 
-// const Title = styled.h1`
-//   text-transform: uppercase;
-//   font-weight: 400;
-//   font-size: 1.4rem;
-//   color: ${(props) => props.theme.colors.pri};
-// `;
-
 const Artwork = styled.img`
   border: none;
   background-size: cover;
@@ -46,7 +39,7 @@ const Artwork = styled.img`
 `;
 
 const ReactAudioPlayerStyled = styled(ReactAudioPlayer)`
-  margin: 1rem;
+  margin: 2.4rem;
   width: 325px;
 `;
 
@@ -55,19 +48,24 @@ const Text = styled.p`
   font-weight: 200;
   font-size: 1.2rem;
   text-align: center;
-  margin: 0.4rem 0 0;
+  margin: 2.4rem 0 0.9rem;
   color: ${(props) => props.theme.colors.pri};
   & > a {
     color: ${(props) => props.theme.colors.sec};
     font-weight: 400;
   }
 `;
+
+const StreamText = styled(Text)`
+  margin: 0;
+`;
+
 const Credit = styled.aside`
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 150;
   text-align: center;
-  margin: 0.4rem;
+  margin: 1.5rem 0 0.9rem;
   color: ${(props) => props.theme.colors.pri};
   & > a {
     color: ${(props) => props.theme.colors.sec};
@@ -80,7 +78,6 @@ const ShareButtonsContainer = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  /* height: 400px; */
   width: 100%;
   margin: 0.7rem;
 `;
@@ -89,7 +86,7 @@ const ShareText = styled.aside`
   font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 150;
-  margin: 0.2rem;
+  margin: 0.4rem;
   color: ${(props) => props.theme.colors.pri};
 `;
 
@@ -102,7 +99,7 @@ const ButtonsWrapper = styled.div`
 const FundingWrapper = styled("div")`
   display: flex;
   width: 100%;
-  margin: 0.5rem;
+  margin: 0 0 0.5rem;
 `;
 
 const PatreonWrapper = styled("div")`
@@ -111,9 +108,9 @@ const PatreonWrapper = styled("div")`
   justify-content: center;
   border: 4px solid #fe424e;
   border-radius: 5px;
-  box-shadow: 0px 0px 15px -6px rgba(0, 0, 0, 0.83);
+  box-shadow: 0px 0px 15px -3px rgba(240, 240, 240, 0.83);
   padding: 0.3rem 0.5rem 0.2rem;
-  margin: 0.5rem;
+  margin: 0 0.5rem;
 `;
 
 const Patreon = styled("img")`
@@ -129,16 +126,17 @@ const BandcampWrapper = styled(PatreonWrapper)`
 const Bandcamp = styled("img")`
   height: 2.5rem;
 `;
+
 export default function Start() {
   const shareURL = "https://www.choirsband.com/";
   return (
     <Container>
-      <Artwork src={artwork_cmlp_remix} alt="Artwork of the remix" />
+      <Artwork src={cover_west_end_rosa} alt="Artwork of the remix" />
       <ReactAudioPlayerStyled src={teaser} controls>
         Your browser does not support the
         <code>audio</code> element.
       </ReactAudioPlayerStyled>
-      <Text>.stream us</Text>
+      <StreamText>.stream us</StreamText>
       <StreamingIcons />
       <Text>.get in touch</Text>
       <ContactIcons />
@@ -150,7 +148,6 @@ export default function Start() {
             target="_blank"
             rel="noreferrer"
           >
-            {/* <Patreon src={patreonLogo} alt="Patreon Logo" /> */}
             <Patreon src={patreonText} alt="Patreon Text" />
           </a>
         </PatreonWrapper>
@@ -172,21 +169,21 @@ export default function Start() {
           <EmailShareButton url={shareURL}>
             <EmailIcon size={32} round />
           </EmailShareButton>
-          <FacebookShareButton url={shareURL}>
-            <FacebookIcon size={32} round />
-          </FacebookShareButton>
-          <PinterestShareButton url={shareURL}>
-            <PinterestIcon size={32} round />
-          </PinterestShareButton>
-          <TelegramShareButton url={shareURL}>
-            <TelegramIcon size={32} round />
-          </TelegramShareButton>
           <TwitterShareButton url={shareURL}>
             <TwitterIcon size={32} round />
           </TwitterShareButton>
+          <FacebookShareButton url={shareURL}>
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
           <WhatsappShareButton url={shareURL}>
             <WhatsappIcon size={32} round />
           </WhatsappShareButton>
+          <TelegramShareButton url={shareURL}>
+            <TelegramIcon size={32} round />
+          </TelegramShareButton>
+          <PinterestShareButton url={shareURL}>
+            <PinterestIcon size={32} round />
+          </PinterestShareButton>
         </ButtonsWrapper>
       </ShareButtonsContainer>
     </Container>

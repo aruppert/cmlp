@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { SocialIcon } from "react-social-icons";
+import tiktok from "../graphics/tiktok_white.svg";
 
 const Container = styled("div")`
   width: 100%;
@@ -9,15 +10,41 @@ const Container = styled("div")`
   justify-content: space-around;
   margin: 0.5rem;
 `;
+const SocialIconStyled = styled(SocialIcon)`
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px -3px rgba(240, 240, 240, 0.83);
+`;
+
+const IconSVGs = styled("img")`
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px -3px rgba(240, 240, 240, 0.83);
+`;
 
 export default function FollowSocially() {
   return (
     <>
       <Container>
-        <SocialIcon url="mailto:cmlp@posteo.de" />
-        <SocialIcon url="https://twitter.com/CmlpRemix" />
-        <SocialIcon url="https://www.facebook.com/cmpl.cmpl.1" />
-        <SocialIcon url="https://www.instagram.com/cmlp_remix/" />
+        <SocialIconStyled
+          fgColor="#F0F0F0"
+          url="https://www.facebook.com/cmpl.cmpl.1"
+        />
+        <SocialIconStyled
+          fgColor="#F0F0F0"
+          url="https://www.instagram.com/cmlp_remix/"
+        />
+        <SocialIconStyled fgColor="#F0F0F0" url="mailto:cmlp@posteo.de" />
+        <SocialIconStyled
+          fgColor="#F0F0F0"
+          url="https://twitter.com/CmlpRemix"
+        />
+        <a
+          href="https://www.tiktok.com/@user078743126?lang=de"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <IconSVGs src={tiktok} alt="TikTok Icon" />
+        </a>
       </Container>
     </>
   );
