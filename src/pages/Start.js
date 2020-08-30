@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import cover_west_end_rosa from "../graphics/cover_west_end_rosa.jpg";
+import cover_west_end_rosa from "../graphics/cover_west_end_rosa_1024.jpg";
 import ReactAudioPlayer from "react-audio-player";
 import teaser from "../audio/teaser.mp3";
 import {
@@ -28,7 +28,9 @@ const Container = styled.div`
   margin: auto;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  @media only screen and (min-height: 1000px) {
+    justify-content: center;
+  }
   align-items: center;
 `;
 
@@ -36,6 +38,7 @@ const Artwork = styled.img`
   border: none;
   background-size: cover;
   width: 100%;
+  margin: 1.5rem 0 0;
 `;
 
 const ReactAudioPlayerStyled = styled(ReactAudioPlayer)`
