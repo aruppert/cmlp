@@ -11,7 +11,7 @@ function GlobalStyles() {
           box-sizing: border-box;
         }
         body {
-          height: 100%;
+          height: 100vh;
           font-size: 18px;
           font-family: "Montserrat", sans-serif;
           margin: 0;

@@ -28,7 +28,9 @@ const Container = styled.div`
   margin: auto;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  @media only screen and (min-height: 1000px) {
+    justify-content: center;
+  }
   align-items: center;
 `;
 
