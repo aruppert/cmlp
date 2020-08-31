@@ -135,7 +135,7 @@ export default function Start() {
   return (
     <Container>
       <Artwork src={cover_west_end_rosa} alt="Artwork of the remix" />
-      <ReactAudioPlayerStyled src={teaser} controls>
+      <ReactAudioPlayerStyled src={synthwave} controls>
         Your browser does not support the
         <code>audio</code> element.
       </ReactAudioPlayerStyled>
