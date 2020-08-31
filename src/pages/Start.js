@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import cover_west_end_rosa from "../graphics/cover_west_end_rosa_1024.jpg";
 import ReactAudioPlayer from "react-audio-player";
-import synthwave from "../audio/synthwave.mp3";
+import teaser from "../audio/teaser2.mp3";
 import {
   EmailShareButton,
   FacebookShareButton,
