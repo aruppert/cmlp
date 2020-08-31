@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import cover_west_end_rosa from "../graphics/cover_west_end_rosa_1024.jpg";
 import ReactAudioPlayer from "react-audio-player";
-import teaser from "../audio/teaser.mp3";
+import synthwave from "../audio/synthwave.mp3";
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -135,7 +135,7 @@ export default function Start() {
   return (
     <Container>
       <Artwork src={cover_west_end_rosa} alt="Artwork of the remix" />
-      <ReactAudioPlayerStyled src={teaser} controls>
+      <ReactAudioPlayerStyled src={synthwave} controls>
         Your browser does not support the
         <code>audio</code> element.
       </ReactAudioPlayerStyled>
