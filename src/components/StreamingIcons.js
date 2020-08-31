@@ -33,6 +33,8 @@ export default function StreamingIcons() {
         <SocialIconStyled
           fgColor="#F0F0F0"
           url="https://soundcloud.com/cmlp_remix"
+          target="_blank"
+          rel="noreferrer"
         />{" "}
         <a
           href="https://www.mixcloud.com/CMLP/"
@@ -43,10 +45,17 @@ export default function StreamingIcons() {
         </a>
       </ContainerTop>
       <Container>
-        <SocialIconStyled fgColor="#F0F0F0" url="https://vimeo.com/cmplremix" />
+        <SocialIconStyled
+          fgColor="#F0F0F0"
+          url="https://vimeo.com/cmplremix"
+          target="_blank"
+          rel="noreferrer"
+        />
         <SocialIconStyled
           fgColor="#F0F0F0"
           url="https://www.youtube.com/channel/UCxErZpcyKhWdLbfF5Lq9sNQ/?guided_help_flow=5"
+          target="_blank"
+          rel="noreferrer"
         />
         <a href="https://hearthis.at/cmlp/" target="_blank" rel="noreferrer">
           <IconSVGs src={hearthis} alt="Hearthis Icon" />

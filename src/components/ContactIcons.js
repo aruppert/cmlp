@@ -28,15 +28,21 @@ export default function FollowSocially() {
         <SocialIconStyled
           fgColor="#F0F0F0"
           url="https://www.facebook.com/cmpl.cmpl.1"
+          target="_blank"
+          rel="noreferrer"
         />
         <SocialIconStyled
           fgColor="#F0F0F0"
           url="https://www.instagram.com/cmlp_remix/"
+          target="_blank"
+          rel="noreferrer"
         />
         <SocialIconStyled fgColor="#F0F0F0" url="mailto:cmlp@posteo.de" />
         <SocialIconStyled
           fgColor="#F0F0F0"
           url="https://twitter.com/CmlpRemix"
+          target="_blank"
+          rel="noreferrer"
         />
         <a
           href="https://www.tiktok.com/@user078743126?lang=de"
